@@ -1,3 +1,4 @@
+import { FatigueCard } from '../components/Predictions.jsx';
 import React from 'react';
 import { ArrowRight, CalendarDays, Clock3, MapPin, Navigation2, Sparkles, WandSparkles, Wallet } from 'lucide-react';
 import { moods, nextGap, student, todaySchedule } from '../mockData.js';
@@ -29,6 +30,8 @@ export default function Dashboard({ mood, onMood, budget, onBudget, onGenerate, 
           </div>
         </div>
       </section>
+
+      <FatigueCard />
 
       <section>
         <SectionTitle eyebrow="ΒΡΕΣ ΤΟ VIBE ΣΟΥ" title="Τι έχεις όρεξη να κάνεις;" />

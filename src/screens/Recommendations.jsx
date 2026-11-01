@@ -1,3 +1,4 @@
+import { PlanForecast } from '../components/Predictions.jsx';
 import React, { useState } from 'react';
 import { ArrowRight, Check, CheckCircle2, Clock3, Heart, Info, MapPin, RefreshCcw, Route, Sparkles, Wallet, X } from 'lucide-react';
 import { moods } from '../mockData.js';
@@ -34,6 +35,7 @@ function PlanCard({ plan, rank, onAccept, onSkip }) {
       <div className="mt-3 space-y-2">
         {plan.activities.map((activity, i) => <div key={`${plan.id}-${i}`} className="flex items-start gap-2.5"><div className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-[#f2f8f2] text-lg dark:bg-[#294134]">{activity.icon}</div><div className="min-w-0 flex-1 pt-0.5"><p className="text-[12px] font-bold text-[#365343] dark:text-[#d5eadd]">{activity.label}</p><p className="text-[10px] text-[#a0b0a2] dark:text-[#8aa995]">{activity.minutes} λεπτά</p></div></div>)}
       </div>
+      <PlanForecast plan={plan} />
       {expanded && <div className="mt-3 rounded-2xl bg-[#f1f8f2] p-3 text-[11px] leading-relaxed text-[#52715d] dark:bg-[#263e30] dark:text-[#c1dac8]"><div className="mb-1 flex items-center gap-1 font-extrabold"><Info size={13}/> Γιατί σου ταιριάζει;</div>{plan.why}<p className="mt-1.5 font-semibold opacity-80">Περιλαμβάνονται ~{plan.travelMinutes}′ μετακίνησης.</p></div>}
       <button type="button" onClick={() => setExpanded((x) => !x)} className="mt-3 text-[11px] font-bold text-[#0b8c66] hover:underline dark:text-[#83dca9]">{expanded ? 'Λιγότερα' : 'Γιατί αυτό το πλάνο;'} <span aria-hidden="true">{expanded ? '↑' : '↓'}</span></button>
       <div className="mt-4 grid grid-cols-[1fr_1.3fr] gap-2.5">

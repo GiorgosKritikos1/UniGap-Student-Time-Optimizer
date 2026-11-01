@@ -69,3 +69,7 @@ input[type="range"] { cursor: pointer; }
 @media (min-width: 1440px) {
   .plan-grid, .place-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+@media (min-width: 900px) {
+  .dashboard-layout > .prediction-overview { grid-column: 1 / -1; }
+}
