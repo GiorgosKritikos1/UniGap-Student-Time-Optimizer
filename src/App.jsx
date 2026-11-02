@@ -1,3 +1,4 @@
+import ChatbotDemo from './components/ChatbotDemo.jsx';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowUpRight, BadgeCheck, Clock3, Globe2, GraduationCap, Layers3, MapPin, MousePointerClick, Sparkles } from 'lucide-react';
 import { defaultPreferences, recommendPlans, student } from './mockData.js';
@@ -126,6 +127,7 @@ export default function App() {
             {screen}
           </main>
           {toast && <div role="status" aria-live="polite" className="pointer-events-none absolute bottom-[89px] left-1/2 z-50 w-[calc(100%-40px)] -translate-x-1/2 rounded-2xl bg-[#163b2b] px-4 py-3 text-center text-[12px] font-bold text-white shadow-xl dark:bg-[#e2fbe9] dark:text-[#173d2b]">{toast}</div>}
+          <ChatbotDemo />
           <BottomNav active={tab} onChange={navigate}/>
         </div>
       </div>

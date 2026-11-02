@@ -73,3 +73,12 @@ input[type="range"] { cursor: pointer; }
 @media (min-width: 900px) {
   .dashboard-layout > .prediction-overview { grid-column: 1 / -1; }
 }
+
+.chat-demo-dialog {
+  width: min(440px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+  margin: auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.chat-demo-dialog::backdrop { background: rgb(9 28 18 / 55%); }
